@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+body {
+  background-color: #141414;
+  color: white;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2 !important;
+}
+* {
+  font-family: "Manrope", sans-serif;
+  z-index: 2;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+.result-container {
+  border-radius: 4px;
+}
+.result {
+  position: relative;
+  padding: 15px 15px;
+}
+.result::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.2px;
+  background-color: #3e3e3e;
+  border-radius: 10px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 25%, transparent);
+}
+.list {
+  left: -300px;
+  transition: 0.3s;
+  background-color: #141414;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.list .div {
+  padding: 10px 5px;
+  z-index: 1;
+}
+
+.list.active {
+  left: 0;
+}
+.sidebar {
+  min-width: 200px;
+  max-width: 200px;
+  overflow-x: hidden !important;
+  z-index: 0;
+  transition: 0.1s;
+}
+.sidebar.open {
+  min-width: 75px;
+  max-width: 75px;
+
+  position: relative;
+}
+.sidebar.open div .side-nav {
+  color: transparent;
+  clip: rect(auto, auto, auto, auto);
+}
+.sidebar.open div .login-btn {
+  width: 0px;
+}
+.form-input {
+  border-color: rgb(101, 101, 101);
+  transition: 0.3s;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: 0.3s;
+}
+.lists:hover .overlay {
+  opacity: 40;
+}
+.lists .options {
+  display: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.lists:hover .options {
+  display: flex;
+  opacity: 100;
+}
+.google {
+  position: relative;
+  padding: 5px;
+
+  margin: auto;
+  width: 50px;
+}
+.google p {
+  z-index: 100;
+  padding: 5px;
+  background-color: #1a1a1a;
+}
+.google::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 45%;
+  transform: translateX(-50%) translateY(-60%);
+  height: 3px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.318);
+}
+.searchInput {
+  width: 0;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.searchInput.open {
+  width: 450px;
+}
+.searchInput .icon {
+  opacity: 0;
+  transition: 0.5s;
+}
+.searchInput.open .icon {
+  opacity: 100;
+}
+
